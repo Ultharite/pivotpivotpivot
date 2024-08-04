@@ -1,0 +1,78 @@
+@use "../base/__variables.scss" as *;
+
+input,
+textarea,
+select,
+button,
+.a8button {
+    flex-shrink: 1;
+    appearance: none;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius: var(--rounded);
+    border-width: 1px;
+    border-color: var(--primary-color);
+    box-shadow: none;
+    height: 2.5rem;
+    border-style: solid;
+
+    &.invalid {
+        border-color: red;
+        box-shadow: 0 0 0 0.125em rgba(red, 25%);
+        background: mix(#fff, red, 90%);
+    }
+
+    &:focus {
+        border-color: var(--primary-color);
+        outline-style: solid;
+        outline-width: 1px;
+        outline-offset: 1px;
+        outline-color: adjust-color($primary-color, $saturation: 100%, $lightness: 20%);
+    }
+}
+
+button, .a8button {
+    border-width: 0;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+        background-color: mix($primary-color, #fff, 90%);
+        outline: 0;
+        color: #fff;
+    }
+}
+
+textarea {
+    width: 100%;
+    min-height: 4rem;
+    resize: vertical;
+    line-height: 1.168;
+}
+
+[type="radio"],
+[type="checkbox"] {
+    width: auto;
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__item label {
+  font-size: 0.875rem;
+}
+
+.form__submit {
+  align-self: flex-end;
+}

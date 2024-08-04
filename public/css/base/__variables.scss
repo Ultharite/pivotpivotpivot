@@ -1,0 +1,14 @@
+:root {
+    --font-sans: system-ui, sans-serif;
+    --primary-color: #0077b6;
+    --link-color: #0077b6;
+    --rounded: 0.25rem;
+}
+
+$primary-color: #0077b6;
+
+$primary-color--light: adjust-color($primary-color, $lightness: 60%, $saturation: -50%);
+
+$border-color: adjust-color($primary-color, $lightness: 50%, $saturation: -50%);;
+
+$link-color: #0077b6;

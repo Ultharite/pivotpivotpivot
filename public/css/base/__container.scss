@@ -1,0 +1,74 @@
+@use "../base/__mixins.scss" as *;
+
+.container  {
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media screen and (max-width: 800px) { &.full-on-mobile {
+    padding-left: 0;
+    padding-right: 0;
+  } }
+
+  @include media('desktop') {
+    padding-left: 72px;
+    padding-right: 71px;
+
+    &--left {
+      padding-right: 0;
+
+      > div:last-of-type {
+        min-width: 50vw;
+      }
+    }
+
+    &--right {
+      padding-left: 0;
+
+      > div:first-of-type {
+        min-width: 50vw;
+      }
+    }
+  }
+
+  @include media('desktop-fhd') {
+    padding-left: 232px;
+    padding-right: 231px;
+
+    &--left {
+      padding-right: 0;
+    }
+
+    &--right {
+      padding-left: 0;
+    }
+
+    &.container--wide {
+      padding-left: 150px;
+      padding-right: 151px;
+    }
+  }
+
+  @include media('desktop-xl') {
+    padding-left: max(20rem, 20vw);
+    padding-right: max(20rem, 20vw);
+
+    &.container--wide {
+      padding-left: max(15rem, 15vw);
+    padding-right: max(15rem, 15vw);
+    }
+
+    &--left {
+      padding-right: 0;
+    }
+
+    &--right {
+      padding-left: 0;
+    }
+  }
+}
+
+.container .container {
+    padding-left: 0;
+    padding-right: 0;
+}

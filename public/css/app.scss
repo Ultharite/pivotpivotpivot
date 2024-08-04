@@ -1,0 +1,164 @@
+@use "base/__default.scss" as *;
+@use "base/__variables.scss" as *;
+@use "base/__mixins.scss" as *;
+@use "base/__container.scss" as *;
+@use "base/__forms.scss" as *;
+
+@use 'sass:color';
+
+.flex {
+    display: flex;
+}
+
+.gap {
+    gap: 0.5rem;
+}
+
+.linewidth {
+    max-width: 80ch;
+}
+
+.siteheader {
+  padding: 2rem;
+  box-shadow: rgba($primary-color, 0.2) 0px 7px 29px 0px;
+}
+
+.siteheader nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.siteheader nav a {
+    border-radius: 0.5rem;
+    padding: 0.25rem 1rem;
+    color: #000;
+}
+
+.siteheader nav a:hover {
+    background: rgba(adjust-color($primary-color, $whiteness: 60%), 0.2);
+}
+
+.siteheader nav a.active {
+    background: $primary-color;
+    color: #fff;
+}
+
+//Dashboard
+
+.dashboard {
+    display: flex;
+    border-radius: var(--rounded);
+    border: 1px solid $border-color;
+    overflow: hidden;
+}
+
+.dashboard__sidebar {
+    background: $primary-color;
+    padding: 2rem 1rem;
+    min-width: fit-content;
+}
+
+.dashboard__nav ul {
+    color: #fff;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard__nav a {
+    color: #fff;
+    display: block;
+    padding: 0.25rem 1rem;
+    border-radius: var(--rounded);
+
+
+
+    &[aria-current="true"] {
+        outline: 1px solid rgba(255,255,255,0.25);
+    }
+
+    &:hover {
+        background: adjust-color($primary-color, $lightness: -5%);
+        color: #fff;
+    }
+}
+
+.dashboard__content {
+    background: $primary-color--light;
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.dashboard__table {
+    font-size: 0.875rem;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.dashboard__table thead tr th {
+    border-bottom: 1px solid $border-color;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: 700;
+}
+
+.dashboard__table tr:not(:last-of-type) td {
+    border-bottom: 1px solid $border-color;
+}
+
+.dashboard__table th, .dashboard__table td {
+    padding: 0.25rem;
+}
+
+.dashboard__table tr td:first-of-type {
+    font-weight: 700;
+}
+
+.dashboard__table th {
+    text-align: left;
+}
+
+.dashboard__dategroup {
+    background: rgba(255,255,255,0.25);
+    padding: 1rem;
+    border: 1px solid $border-color;
+    border-radius: var(--rounded);
+}
+
+.dbc {
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+
+        &:not(:last-child) {
+        border-bottom: 1px solid $border-color;
+    }
+}
+
+.dbc__name {
+    display: block;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.dbc__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.dbc__actions .a8button {
+    font-size: 0.875rem;
+    justify-content: center;
+}
+
+.dbc__prices {
+    text-align: right;
+}

@@ -1,0 +1,188 @@
+@use "../base/__variables.scss" as *;
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.618;
+}
+
+p:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:not([class]):hover,
+a:hover {
+    color: mix($link-color, #000, 80%);
+}
+
+blockquote {
+    padding: 2rem;
+    margin: 0;
+}
+
+html,
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+}
+
+hr {
+    background: rgba(0, 0, 0, 0.5);
+    border: 0;
+    height: 1px;
+    margin: 2rem 0;
+}
+
+ul,
+ol {
+    margin: 0 0 1.5rem 0.75rem;
+    padding: 0 0 0 0.75rem;
+}
+
+ul {
+    list-style: square outside;
+
+    li:marker {
+        color: var(--accent-color);
+    }
+}
+
+li > ul,
+li > ol {
+    margin-bottom: 0;
+    margin-left: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+svg {
+    vertical-align: middle;
+}
+
+figure {
+    margin: 0;
+}
+
+table {
+    margin: 0 0 1.5rem;
+    width: 100%;
+}
+
+a[href^="tel:"] {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.widget {
+    margin: 0 0 2rem;
+}
+
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+.alignleft {
+    float: left;
+    margin: 0 2rem 2rem 0;
+}
+
+.alignright {
+    float: right;
+    margin: 0 0 2rem 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    font-family: var(--font-display);
+    font-weight: 900;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: clamp(2.5em,6vw,6em);
+}
+
+h2 {
+    font-size: clamp(2.5em,4vw,4em);
+}
+
+h3 {
+    font-size: clamp(1.75em, 4vw, 2rem);
+}
+
+* {
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    h5:first-child,
+    p:first-child {
+        margin-top: 0;
+    }
+
+    h1:last-child,
+    h2:last-child,
+    h3:last-child,
+    h4:last-child,
+    p:last-child,
+    .widget:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Reduce Motion Support from sanitize.css */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-delay: -1ms !important; /* 1 */
+        animation-duration: 1ms !important; /* 1 */
+        animation-iteration-count: 1 !important; /* 1 */
+        background-attachment: initial !important; /* 2 */
+        scroll-behavior: auto !important; /* 3 */
+        transition-delay: 0s !important; /* 4 */
+        transition-duration: 0s !important; /* 4 */
+    }
+}
